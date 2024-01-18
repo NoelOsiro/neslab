@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-// import './globals.css'
+import './globals.css'
 import Navbar from '@/components/Navigation/Navbar';
 import Sidebar from '@/components/Navigation/Sidebar';
 import Footer from '@/components/Footer/Footer';
@@ -32,6 +32,8 @@ export default function RootLayout({
          </p>
           </div>
         </div>
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+        <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
       </body>
     </html>
   )
