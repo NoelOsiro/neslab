@@ -1,5 +1,6 @@
 import { Metadata } from 'next/head';
 import { Inter } from 'next/font/google';
+import './globals.css';
 import Head from 'next/head';  // Import Head from next/head
 import Navbar from '@/components/Navigation/Navbar';
 import Sidebar from '@/components/Navigation/Sidebar';
