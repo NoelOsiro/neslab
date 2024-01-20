@@ -1,17 +1,18 @@
 // pages/multiStepForm.js
 
 import { ChangeEvent, FormEvent, useState } from 'react';
+import NextButton from '../Buttons/NextButton';
 
 const MultiStepForm = () => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    date: new Date().toISOString().split('T')[0],
+    shift: '',
     email: '',
   });
 
   const [currentStep, setCurrentStep] = useState(1);
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -38,47 +39,31 @@ const MultiStepForm = () => {
       <form onSubmit={handleSubmit}>
         {currentStep === 1 && (
           <div>
-            <h2>Step 1</h2>
-            <label htmlFor={'shift'} className="text-gray-900">Date</label>
+            <h2 className='text-black text-center my-2 sm:my-4'>Step 1</h2>
+            <label htmlFor={'Date'} className="text-gray-900">Date</label>
               <input
                 type="date"
                 name="Date"
-                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full pl-10 p-2.5"
-                value={formData.firstName}
+                className="bg-gray-50 border mt-2 sm:mt-4 pl-5 sm:pl-10 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full pl-10 p-2.5"
+                value={formData.date}
                 readOnly
                 onChange={handleInputChange}
               />
             <br />
             <label htmlFor={'shift'} className="text-gray-900">Shift:</label>
-              
-              <input
-                type="text"
-                name="shift"
-                className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full pl-10 p-2.5"
-                value={formData.lastName}
-                onChange={handleInputChange}
-              />
-            
+            <select
+              name="shift"
+              className="bg-gray-50 border mt-2 sm:mt-4 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full pl-5  sm:pl-10 p-2.5"
+              value={formData.shift}
+              onChange={handleInputChange}
+            >
+              <option value="A">Shift A</option>
+              <option value="B">Shift B</option>
+            </select>
             <br />
-            <button
-                     
-                     className="hidden sm:inline-flex ml-5 text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-3"
-                    onClick={nextStep}
-                  >
-                     <svg
-                        className="svg-inline--fa fa-gem -ml-1 mr-2 h-4 w-4"
-                        aria-hidden="true"
-                        focusable="false"
-                        data-prefix="fas"
-                        data-icon="gem"
-                        role="img"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 512"
-                     >
-                        <path fill="currentColor" d="M378.7 32H133.3L256 182.7L378.7 32zM512 192l-107.4-141.3L289.6 192H512zM107.4 50.67L0 192h222.4L107.4 50.67zM244.3 474.9C247.3 478.2 251.6 480 256 480s8.653-1.828 11.67-5.062L510.6 224H1.365L244.3 474.9z"></path>
-                     </svg>
-                     Next
-                  </button>
+            <div className='flex justify-between'>
+            <NextButton onClick={nextStep} text={'Next'} disabled={!formData.shift}/>
+            </div>
           </div>
         )}
 
@@ -96,20 +81,18 @@ const MultiStepForm = () => {
               />
             </label>
             <br />
-            <button type="button" onClick={prevStep}>
-              Previous
-            </button>
-            <button type="button" onClick={nextStep}>
-              Next
-            </button>
+            <div className='flex justify-between'>
+            <NextButton onClick={nextStep} text={'Previous'} disabled={false}/>
+            <NextButton onClick={nextStep} text={'Next'} disabled={!formData.email}/>
+            </div>
           </div>
         )}
 
         {currentStep === 3 && (
           <div>
             <h2>Step 3: Review and Submit</h2>
-            <p>First Name: {formData.firstName}</p>
-            <p>Last Name: {formData.lastName}</p>
+            <p>First Name: {formData.date}</p>
+            <p>Last Name: {formData.shift}</p>
             <p>Email: {formData.email}</p>
             <button type="button" onClick={prevStep}>
               Previous

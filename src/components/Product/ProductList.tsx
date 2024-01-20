@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Footer from '@/components/Footer/Footer';
 import Image from 'next/image';
 import ProductItem from '@/components/Product/ProductItem';
-import { productList, IProduct } from './products';
+import { productList } from './products';
 
 
 export default function ProductList() {
@@ -14,7 +14,7 @@ export default function ProductList() {
     // Debounce function to delay filtering
     const debounceFilter = setTimeout(() => {
       const filtered = productList.filter((product) =>
-        product.title.toLowerCase().includes(productText.toLowerCase())
+        product.name.toLowerCase().includes(productText.toLowerCase())
       );
       setFilteredProducts(filtered);
     }, 300); // Adjust the delay as needed (e.g., 300ms)
@@ -55,7 +55,7 @@ export default function ProductList() {
         />
       </div>
       <ul role="list" className="divide-y divide-gray-200 dark:divide-gray-700">
-        {filteredProducts.map((product, index) => (
+        {filteredProducts.slice(0,6).map((product, index) => (
           <ProductItem key={index} product={product} />
         ))}
       </ul>
