@@ -30,5 +30,6 @@ export const productList: IProduct[] = [
     size: 'w-8 h-8',
     sku: '2367',
   },
+ 
   // Add other product entries as needed
 ];
