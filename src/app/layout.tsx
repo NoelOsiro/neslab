@@ -26,8 +26,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <body className={inter.className}>
         <Navbar />
         <main className="flex overflow-hidden bg-white pt-16">
-          <Sidebar />
           <div className="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
+          <Sidebar />
           <div id="main-content" className="h-full w-full bg-gray-50 relative overflow-y-auto lg:ml-64">
             {children}
             <Footer />
