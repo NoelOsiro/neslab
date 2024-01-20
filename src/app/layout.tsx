@@ -1,11 +1,11 @@
-import { Metadata } from 'next/head';
+import { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import Head from 'next/head';  // Import Head from next/head
+import Head from 'next/head';
 import Navbar from '@/components/Navigation/Navbar';
 import Sidebar from '@/components/Navigation/Sidebar';
 import Footer from '@/components/Footer/Footer';
-import Script from 'next/script'
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,14 +19,12 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <>
       <Head>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" />
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        {/* Other head elements go here */}
+        <html lang="en" />
       </Head>
 
       <body className={inter.className}>
-        <Script src="https://demo.themesberg.com/windster/app.bundle.js"></Script>
-        <Script src="https://buttons.github.io/buttons.js"></Script>
+        <Script src="https://demo.themesberg.com/windster/app.bundle.js" />
+        <Script src="https://buttons.github.io/buttons.js" />
         <Navbar />
         <main className="flex overflow-hidden bg-white pt-16">
           <div className="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
