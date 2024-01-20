@@ -1,5 +1,5 @@
 import React from 'react';
-import { IProduct } from '../data/products';
+import { IProduct } from './products';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -14,7 +14,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
       <Link href={{ pathname: productUrl, query: { sku: product.sku, title: product.title, size: product.size } }}>
       <div className="flex items-center space-x-4">
         <div className="flex-shrink-0">
-          <img className={`w-8 h-8 rounded-full ${product.size}`} src={product.image} alt={`${product.title} image`} />
+          <Image width={32} height={32} className={`w-8 h-8 rounded-full ${product.size}`} src={product.image} alt={`${product.title} image`} />
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium text-gray-900 truncate dark:text-white">

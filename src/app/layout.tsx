@@ -5,6 +5,7 @@ import Head from 'next/head';  // Import Head from next/head
 import Navbar from '@/components/Navigation/Navbar';
 import Sidebar from '@/components/Navigation/Sidebar';
 import Footer from '@/components/Footer/Footer';
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,6 +25,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       </Head>
 
       <body className={inter.className}>
+        <Script src="https://demo.themesberg.com/windster/app.bundle.js"></Script>
+        <Script src="https://buttons.github.io/buttons.js"></Script>
         <Navbar />
         <main className="flex overflow-hidden bg-white pt-16">
           <div className="bg-gray-900 opacity-50 hidden fixed inset-0 z-10" id="sidebarBackdrop"></div>
@@ -36,8 +39,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             </p>
           </div>
         </main>
-        <script async defer src="https://buttons.github.io/buttons.js"></script>
-        <script src="https://demo.themesberg.com/windster/app.bundle.js"></script>
       </body>
     </>
   );

@@ -76,7 +76,7 @@ export default function DataPage() {
                            <li className="py-3 sm:py-4">
                               <div className="flex items-center space-x-4">
                                  <div className="flex-shrink-0">
-                                    <img className="h-8 w-8 rounded-full" src="https://demo.themesberg.com/windster/images/users/neil-sims.png" alt="Neil image"/>
+                                    <Image className="h-8 w-8 rounded-full" src="https://demo.themesberg.com/windster/images/users/neil-sims.png" alt="Neil image" width={32} height={32}/>
                                  </div>
                                  <div className="flex-1 min-w-0">
                                     <p className="text-sm font-medium text-gray-900 truncate">
@@ -94,7 +94,7 @@ export default function DataPage() {
                            <li className="py-3 sm:py-4">
                               <div className="flex items-center space-x-4">
                                  <div className="flex-shrink-0">
-                                    <img className="h-8 w-8 rounded-full" src="https://demo.themesberg.com/windster/images/users/bonnie-green.png" alt="Neil image"/>
+                                    <Image width={32} height={32} className="h-8 w-8 rounded-full" src="https://demo.themesberg.com/windster/images/users/bonnie-green.png" alt="Neil image"/>
                                  </div>
                                  <div className="flex-1 min-w-0">
                                     <p className="text-sm font-medium text-gray-900 truncate">
@@ -112,7 +112,7 @@ export default function DataPage() {
                            <li className="py-3 sm:py-4">
                               <div className="flex items-center space-x-4">
                                  <div className="flex-shrink-0">
-                                    <img className="h-8 w-8 rounded-full" src="https://demo.themesberg.com/windster/images/users/michael-gough.png" alt="Neil image"/>
+                                    <Image width={32} height={32} className="h-8 w-8 rounded-full" src="https://demo.themesberg.com/windster/images/users/michael-gough.png" alt="Neil image"/>
                                  </div>
                                  <div className="flex-1 min-w-0">
                                     <p className="text-sm font-medium text-gray-900 truncate">
@@ -130,7 +130,7 @@ export default function DataPage() {
                            <li className="py-3 sm:py-4">
                               <div className="flex items-center space-x-4">
                                  <div className="flex-shrink-0">
-                                    <img className="h-8 w-8 rounded-full" src="https://demo.themesberg.com/windster/images/users/thomas-lean.png" alt="Neil image"/>
+                                 <Image width={32} height={32} className="h-8 w-8 rounded-full" src="https://demo.themesberg.com/windster/images/users/thomas-lean.png" alt="Neil image"/>
                                  </div>
                                  <div className="flex-1 min-w-0">
                                     <p className="text-sm font-medium text-gray-900 truncate">
@@ -148,7 +148,7 @@ export default function DataPage() {
                            <li className="pt-3 sm:pt-4 pb-0">
                               <div className="flex items-center space-x-4">
                                  <div className="flex-shrink-0">
-                                    <img className="h-8 w-8 rounded-full" src="https://demo.themesberg.com/windster/images/users/lana-byrd.png" alt="Neil image"/>
+                                 <Image width={32} height={32} className="h-8 w-8 rounded-full" src="https://demo.themesberg.com/windster/images/users/lana-byrd.png" alt="Neil image"/>
                                  </div>
                                  <div className="flex-1 min-w-0">
                                     <p className="text-sm font-medium text-gray-900 truncate">
