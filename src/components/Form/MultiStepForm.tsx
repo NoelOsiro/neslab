@@ -1,6 +1,6 @@
 // pages/multiStepForm.js
 
-import { useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 
 const MultiStepForm = () => {
   const [formData, setFormData] = useState({
@@ -11,14 +11,14 @@ const MultiStepForm = () => {
 
   const [currentStep, setCurrentStep] = useState(1);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // Process or submit the form data
     console.log('Form submitted:', formData);
