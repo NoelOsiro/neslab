@@ -23,7 +23,7 @@ export default function ProductList() {
   }, [productText]);
   return (
     <div className="flow-root">
-      <label htmlFor="product-search" className="sr-only">
+      <label htmlFor="search" className="sr-only">
         Search
       </label>
       <div className="mt-1 relative lg:w-128">
@@ -43,8 +43,8 @@ export default function ProductList() {
         </div>
         <input
           type="text"
-          name="email"
-          id="product-search"
+          name="search"
+          id="search"
           value={productText}
           onChange={(e) => {
             setProductText(e.target.value);

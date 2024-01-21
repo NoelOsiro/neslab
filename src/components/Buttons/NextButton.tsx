@@ -2,7 +2,7 @@
 import React from 'react';
 
 const NextButton: React.FC<{ 
-    onClick: () => void
+    onClick: (event: React.MouseEvent<HTMLButtonElement>) => void
     text:string
     disabled:boolean }> = ({ 
         onClick,
@@ -10,6 +10,7 @@ const NextButton: React.FC<{
         disabled }) => {
   return (
     <button
+      type='button'
       className="inline-flex text-white disabled:bg-gray-700 bg-cyan-600 hover:bg-cyan-800 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center mr-3"
       onClick={onClick}
       disabled={disabled}
