@@ -1,7 +1,5 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import Footer from '@/components/Footer/Footer';
-import Image from 'next/image';
 import ProductItem from '@/components/Product/ProductItem';
 import { productList } from './products';
 

@@ -1,4 +1,3 @@
-import Footer from '@/components/Footer/Footer';
 import ProductList from '@/components/Product/ProductList';
 import Image from 'next/image';
 

@@ -1,9 +1,6 @@
 // Sidebar.tsx
 import React from 'react';
 import SidebarLink from './SidebarLink';
-import { UpgradeToProIcon, DocumentationIcon, ComponentsIcon, HelpIcon } from './SidebarIcons';
-
-
 interface SidebarProps {
   href: string; text: string; icon: JSX.Element;
 }
