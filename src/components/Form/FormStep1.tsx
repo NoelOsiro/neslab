@@ -51,7 +51,7 @@ const Step1: React.FC = () => {
         <option value="A">Shift A</option>
         <option value="B">Shift B</option>
       </select>
-      {shiftError && <div className='text-red-500 py-2 font-bold'>{shiftError}</div>}
+      {shiftError.length > 0 && <div className='text-red-500 py-2 font-bold'>{shiftError}</div>}
       <br />
     </div>
   );

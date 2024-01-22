@@ -1,7 +1,6 @@
 "use client"
 import MultiStepForm from '@/components/Form/MultiStepForm';
 import { useSearchParams } from 'next/navigation';
-import { FormProvider } from '@/context/FormContext';
 
 
 export default function Page() {
@@ -21,9 +20,7 @@ export default function Page() {
                      <h3 className="text-base mt-2 font-normal text-gray-500">{sku}</h3>
                   </div>
                </div>
-               <FormProvider>
                   <MultiStepForm />
-               </FormProvider>
             </div>
          </div>
       </div>
