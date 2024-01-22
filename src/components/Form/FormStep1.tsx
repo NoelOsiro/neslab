@@ -6,14 +6,21 @@ import { useFormContext } from '@/context/FormContext';
 const Step1: React.FC = () => {
   const { state, dispatch } = useFormContext();
   const isShiftInvalid = !!state.errors.shift;
-  const handleNext = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-    if (state.data.shift.trim() === '') {
+
+  const handleShiftChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const shiftValue = e.target.value;
+    // Validate the shift field
+    if (shiftValue.trim() === '') {
       dispatch({ type: 'SET_ERRORS', payload: { shift: 'Shift is required' } });
     } else {
       dispatch({ type: 'SET_ERRORS', payload: { shift: null } });
-      dispatch({ type: 'NEXT_STEP' });
     }
+    // Update the shift value in the form state
+    dispatch({ type: 'UPDATE_DATA', payload: { shift: shiftValue } });
+  };
+  const handleNext = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    dispatch({ type: 'NEXT_STEP' });
   };
 
   return (
@@ -33,13 +40,13 @@ const Step1: React.FC = () => {
         name="shift"
         className="bg-gray-50 border mt-2 sm:mt-4 border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full pl-5  sm:pl-10 p-2.5"
         value={state.data.shift}
-        onChange={(e) => dispatch({ type: 'UPDATE_DATA', payload: { shift: e.target.value } })}
+        onChange={handleShiftChange}
       >
         <option value="" disabled>Select Shift</option>
         <option value="A">Shift A</option>
         <option value="B">Shift B</option>
       </select>
-      {state.errors.shift && <div className='text-red font-bold'>{state.errors.shift}</div>}
+      {state.errors.shift && <div className='text-red-500 py-2 font-bold'>{state.errors.shift}</div>}
       <br />
       <div className='flex justify-between'>
         <NextButton onClick={handleNext} text={'Next'} disabled={isShiftInvalid} />

@@ -1,10 +1,11 @@
-// FormStep1.tsx
-import React, { ChangeEvent } from 'react';
+// FormStep2.tsx
+import React from 'react';
 import NextButton from '../Buttons/NextButton';
 import { useFormContext } from '@/context/FormContext';
 
 const Step2: React.FC = () => {
   const { state, dispatch } = useFormContext();
+
   const handleNext = () => {
     // Basic validation
     if (state.data.startTime.trim() === '') {
@@ -15,7 +16,6 @@ const Step2: React.FC = () => {
       alert(`Form submitted: ${JSON.stringify(state.data)}`);
     }
   };
-
 
   return (
     <div>
@@ -38,7 +38,7 @@ const Step2: React.FC = () => {
       
       <br/>
       <div className='flex justify-between'>
-      <NextButton onClick={handleNext} text={'Previous'} disabled={false} />
+        <NextButton onClick={handleNext} text={'Previous'} disabled={false} />
         <NextButton onClick={handleNext} text={'Next'} disabled={!!state.errors.startTime && !!state.errors.line} />
       </div>
     </div>
