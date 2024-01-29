@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import NextButton from '../Buttons/NextButton';
 import Step1 from './FormStep1';
 import Step2 from './FormStep2';
+import Step3 from './FormStep3';
 
 const MultiStepForm = () => {
   const [currentStep, setCurrentStep] = useState<number>(1);
@@ -38,6 +39,9 @@ const MultiStepForm = () => {
       <div>
         {currentStep === 1 && <Step1 />}
         {currentStep === 2 && <Step2 />}
+        {currentStep === 3 && <Step3 onSave={function (data: any): void {
+          throw new Error('Function not implemented.');
+        } } />}
         <div className='flex justify-between'>
           {currentStep > 1 ? <NextButton onClick={handlePrevious} text={'Previous'} disabled={false} /> : null}
           <NextButton onClick={handleNext} text={'Next'} disabled={false} />
